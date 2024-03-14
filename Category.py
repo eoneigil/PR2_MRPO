@@ -1,7 +1,6 @@
 class Categoryes:
-    def __init__(self, id, name):
-        self.id = id
+    def __init__(self, name):
         self.name = name
 
     def get_info(self):
-        return [self.id, self.name]
+        return [self.name]
