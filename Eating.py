@@ -1,8 +1,9 @@
-class Eating:
-    def __init__(self, id, user, name):
-        self.id = id
-        self.user = user
-        self.name = name
+from dataclasses import dataclass
+from User import User  # Импортируем класс User, так как класс Eating использует его
 
-    def get_info(self):
-        return [self.id, self.user, self.name]
+@dataclass(frozen=True)
+class Eating:
+    id: int
+    user: User
+    name: str
+    dish: str

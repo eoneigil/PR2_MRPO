@@ -1,6 +1,5 @@
-class Product:
-    def __init__(self, name):
-        self.name = name
+from dataclasses import dataclass
 
-    def get_info(self):
-        return [self.name]
+@dataclass(frozen=True)
+class Product:
+    name: str

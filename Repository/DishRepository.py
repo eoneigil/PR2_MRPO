@@ -1,7 +1,6 @@
 from Repository import FakeRepository
 
 class DishRepository(FakeRepository.FakeRepository):
-
     def __init__(self):
         self.dishes = []
 

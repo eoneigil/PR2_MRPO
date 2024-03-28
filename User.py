@@ -1,11 +1,20 @@
-class User:
-    def __init__(self, id, age, gender,  weight, name, activity):
-        self.id = id
-        self.age = age
-        self.gender = gender
-        self.weight = weight
-        self.name = name
-        self.activity = activity
+from dataclasses import dataclass
 
-    def get_info(self):
-        return [self.id, self.age, self.gender, self.weight, self.name, self.activity]
+@dataclass(frozen=True)
+class User:
+    id: int
+    age: int
+    gender: str
+    weight: float
+    name: str
+    activity: str
+
+    def __eq__(self, other):
+        if isinstance(other, User):
+            return (self.id == other.id and
+                    self.age == other.age and
+                    self.gender == other.gender and
+                    self.weight == other.weight and
+                    self.name == other.name and
+                    self.activity == other.activity)
+        return False
