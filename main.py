@@ -1,49 +1,43 @@
-import Dish
-import Eating
-import Category
-import Product
-import User
+from Models.Dish import Dish
+from Models import User
+from Procedures.DishProcedure import DishProcedure
+from Procedures.EatingProcedure import EatingProcedure
+from Procedures.UserProcedure import UserProcedure
+from Procedures.CategoryProcedure import CategoryProcedure
+from Repository.XMLRepository import XMLDishRepository, XMLProductRepository
+from Repository.XMLRepository import XMLUserRepository
+from Services.UserService import UserService
+from Repository.XMLRepository import XMLEatingRepository
 
-from Repository import UserRepository as uR
-# from business_rules import check_calories, check_product_in_dish, check_dish_carb, check_dish_fat
 
-user1 = User.User(1, 20, 'мужской', 80, 'Иван', 'высокая')
-user2 = User.User(2, 21, 'мужской', 65, 'Алишер', 'низкая')
-user3 = User.User(3, 21, 'мужской', 72, 'Илья', 'средняя')
 
-product1 = Product.Product('Куриная грудка')
-product2 = Product.Product('Гречка')
-product3 = Product.Product('Морковь')
-product4 = Product.Product('Лук')
-product5 = Product.Product('Картофель')
-product6 = Product.Product('Рис')
+# Инициализация репозиториев
+user_repository = XMLUserRepository("users.xml")
+dish_repository = XMLDishRepository("dishes.xml")
+eating_repository = XMLEatingRepository("eatings.xml")
+product_repository = XMLProductRepository("products.xml")
 
-category1 = Category.Categoryes('Постное')
-category2 = Category.Categoryes('Без жарки')
 
-dish1 = Dish.Dish(1, 'Запеченная куриная грудка с картофелем', 987, 84, 12, 69, {product1: 200, product5: 150}, category1)
-dish2 = Dish.Dish(2, 'Гречка с жареной курицей', 1022, 94, 10, 145, {product2: 240, product1: 400}, category2)
 
-eating1 = Eating.Eating(1, user1, 'Завтрак', dish1.name)
-eating2 = Eating.Eating(2, user2, 'Обед', dish2.name)
-eating3 = Eating.Eating(3, user1, 'Ужин', dish1.name)
+# Инициализация процедур и сервиса
+dish_procedure = DishProcedure(dish_repository, product_repository)
+user_procedure = UserProcedure(user_repository)
+eating_procedure = EatingProcedure(eating_repository)
+user_service = UserService(user_procedure, eating_repository, dish_repository)
 
-uRep = uR.UserRepository()
 
-uRep.add(user1)
-uRep.add(user2)
-uRep.add(user3)
+# Создание нового блюда с указанием идентификаторов продуктов
+new_dish = Dish(8, "Яйцо с сыром", 350, 10, 5, 60, {1: 3, 2: 45}, category=3)  # Где 1 - id Овсянки
+dish_procedure.add_dish_if_meets_nutritional_requirements(new_dish)
 
-print(uRep.get_all())
 
-uRep.remove(user3)
-print(uRep.get_by_name(2))
+# Добавление пользователя
+# User3 = User.User(3, 21, 'женский', 45, 165, 'Анна', 'низкая')
+# user_procedure.add_user_if_valid(User3)
 
-print(uRep.get_by_name(5))
+# Добавление приема пищи для пользователя
+# user_service.add_meal_to_user(3, "Овсянка", "Ужин")
+user_service.add_meal_to_user(1, "Яйцо с сыром", "Завтрак")
 
-print(dish1.get_info())
-
-# check_calories(dish1, 600)
-# check_product_in_dish(dish1, product1)
-# check_dish_fat(dish1)
-# check_dish_carb(dish1)
+# Вывод всех приемов пищи пользователя
+print(user_service.get_all_meals_for_user(1))

@@ -1,6 +1,7 @@
-from Dish import Dish
-from User import User
-from Product import Product
+from Models.Dish import Dish
+from Models.Product import Product
+from Models.Category import Categoryes
+from Models.Eating import Eating
 
 
 # Правило проверки калорийности блюда
@@ -57,4 +58,32 @@ def validate_user_height(height: float) -> bool:
         return True
     else:
         print('Ошибка: Рост пользователя должен быть в диапазоне от 40 до 240 см.')
+        return False
+
+def validate_user_weight(weight: float) -> bool:
+    if 20 <= weight <= 200:
+        return True
+    else:
+        print('Ошибка: Вес пользователя должен быть в диапазоне от 20 до 200 см.')
+        return False
+
+def validate_product_name(product: Product) -> bool:
+    if len(Product.name) > 40:
+        return True
+    else:
+        print('Ошибка: Слишком длинное название продукта')
+        return False
+
+def validate_category_name(category: Categoryes) -> bool:
+    if len(Categoryes.name) > 20:
+        return True
+    else:
+        print('Ошибка: Слишком длинное название категории')
+        return False
+
+def validate_eating_name(eating: Eating) -> bool:
+    if (Eating.name == 'Завтрак' or Eating.name == 'Обед' or Eating.name == 'Ужин'):
+        return True
+    else:
+        print('Ошибка: Название приема пищи указано неверно')
         return False

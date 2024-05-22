@@ -1,0 +1,88 @@
+<dishes>
+	<dishes>
+		<dish>
+			<id>6</id>
+			<name>Пицца</name>
+			<calorifik>350</calorifik>
+			<protein>10</protein>
+			<fat>5</fat>
+			<carb>60</carb>
+			<products>{'Овсянка': 150}</products>
+			<category_id>1</category_id>
+		</dish>
+		<dish>
+			<id>5</id>
+			<name>Пицца</name>
+			<calorifik>350</calorifik>
+			<protein>10</protein>
+			<fat>5</fat>
+			<carb>60</carb>
+			<products>{'Овсянка': 150}</products>
+			<category_id>1</category_id>
+		</dish>
+		<dish>
+			<id>1</id>
+			<name>Пицца</name>
+			<calorifik>350</calorifik>
+			<protein>10</protein>
+			<fat>5</fat>
+			<carb>60</carb>
+			<products>{'Овсянка': 150}</products>
+			<category_id>Завтрак</category_id>
+		</dish>
+		<dish>
+			<id>2</id>
+			<name>Пицца</name>
+			<calorifik>350</calorifik>
+			<protein>10</protein>
+			<fat>5</fat>
+			<carb>60</carb>
+			<products>{'Овсянка': 150}</products>
+			<category_id>3</category_id>
+		</dish>
+		<dish>
+			<id>3</id>
+			<name>Овсянка</name>
+			<calorifik>350</calorifik>
+			<protein>10</protein>
+			<fat>5</fat>
+			<carb>60</carb>
+			<products>{'Овсянка': 150}</products>
+			<category_id>3</category_id>
+		</dish>
+		<dish>
+			<id>7</id>
+			<name>Яйцо</name>
+			<calorifik>350</calorifik>
+			<protein>10</protein>
+			<fat>5</fat>
+			<carb>60</carb>
+			<products>
+				<product>
+					<product_id>1</product_id>
+					<amount>3</amount>
+				</product>
+			</products>
+			<category>3</category>
+		</dish>
+		<dish>
+			<id>8</id>
+			<name>Яйцо с сыром</name>
+			<calorifik>350</calorifik>
+			<protein>10</protein>
+			<fat>5</fat>
+			<carb>60</carb>
+			<products>
+				<product>
+					<product_id>1</product_id>
+					<amount>3</amount>
+				</product>
+				<product>
+					<product_id>2</product_id>
+					<amount>45</amount>
+				</product>
+			</products>
+			<category>3</category>
+		</dish>
+	</dishes>
+</dishes>

@@ -1,5 +1,5 @@
 import unittest
-from Dish import Dish
+from Models.Dish import Dish
 from business_rules import check_dish_carb, check_dish_fat, validate_nutritional_values, validate_user_height
 
 
@@ -30,4 +30,4 @@ class TestBusinessRules(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    test;

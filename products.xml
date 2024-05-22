@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<products>
+  <product>
+    <id>1</id>
+    <name>Яйцо</name>
+  </product>
+  <product>
+    <id>2</id>
+    <name>Сыр</name>
+  </product>
+  <product>
+    <id>3</id>
+    <name>Сгущенка</name>
+  </product>
+  <product>
+    <id>4</id>
+    <name>Макароны</name>
+  </product>
+  <product>
+    <id>5</id>
+    <name>Картофель</name>
+  </product>
+  <product>
+    <id>6</id>
+    <name>Помидор</name>
+  </product>
+</products>

@@ -23,4 +23,11 @@ class UserRepository(FakeRepository.FakeRepository):
             for u in self.users:
                 if u.name == name:
                     return u
-        return "Пользователь не найден"
+        return None
+
+    def get_by_id(self, id):
+        if self.users:
+            for u in self.users:
+                if u.id == id:
+                    return u
+        return None  # Возвращаем None, если пользователь не найден

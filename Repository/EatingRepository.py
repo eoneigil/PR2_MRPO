@@ -23,3 +23,10 @@ class EatingRepository(FakeRepository.FakeRepository):
                 if e.name == name:
                     return e
         return "Прием пищи не найден"
+
+    def get_all_meals_for_user(self, user):
+        meals_for_user = []
+        for eating in self.eatings:
+            if eating.user == user:
+                meals_for_user.append(eating)
+        return meals_for_user

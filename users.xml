@@ -1,0 +1,22 @@
+<users>
+	<user>
+		<id>1</id>
+		<age>20</age>
+		<gender>мужской</gender>
+		<weight>80</weight>
+		<height>178</height>
+		<name>Иван</name>
+		<activity>высокая</activity>
+	</user>
+	<users>
+		<user>
+			<id>3</id>
+			<age>21</age>
+			<gender>женский</gender>
+			<weight>45</weight>
+			<height>165</height>
+			<name>Анна</name>
+			<activity>низкая</activity>
+		</user>
+	</users>
+</users>
