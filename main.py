@@ -27,7 +27,7 @@ user_service = UserService(user_procedure, eating_repository, dish_repository)
 
 
 # Создание нового блюда с указанием идентификаторов продуктов
-new_dish = Dish(1, "Котлета куриная", 480, 30, 5, 10, {1: 3, 2: 45}, category=3)  # Где 1 - id Овсянки
+new_dish = Dish(1, "Котлета куриная", 480, 30, 5, 10, {1: 3, 2: 45}, category=3)
 dish_procedure.add_dish_if_meets_nutritional_requirements(new_dish)
 
 

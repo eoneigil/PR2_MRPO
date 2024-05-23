@@ -5,7 +5,7 @@ from DBModels.Dish_Product import dish_product
 
 Base = declarative_base()
 
-class Dish(Base):
+class DishDB(Base):
     __tablename__ = 'dishes'
 
     id = Column(Integer, primary_key=True)

@@ -48,5 +48,17 @@
 			<name>Завтрак</name>
 			<dish>Яйцо с сыром</dish>
 		</eating>
+		<eating>
+			<id>9</id>
+			<user_id>1</user_id>
+			<name>Завтрак</name>
+			<dish>Яйцо с сыром</dish>
+		</eating>
+		<eating>
+			<id>10</id>
+			<user_id>1</user_id>
+			<name>Завтрак</name>
+			<dish>Яйцо с сыром</dish>
+		</eating>
 	</eatings>
 </eatings>

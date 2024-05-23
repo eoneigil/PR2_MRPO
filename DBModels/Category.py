@@ -1,11 +1,17 @@
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
-from sqlalchemy import create_engine, Column, Integer, String, Table, ForeignKey
+from sqlalchemy import Column, Integer, String
+from Repository.SQLRepository import Base
 
-Base = declarative_base()
-
-class Category(Base):
+class CategoryDB(Base):
     __tablename__ = 'categoryes'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String)
+
+    def __init__(self, category_data):
+        self.name = category_data.name
+
+    def to_domain(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+        }
